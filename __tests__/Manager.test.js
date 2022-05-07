@@ -1,1 +1,1 @@
-const manager = {}
+module.exports = Manager; 

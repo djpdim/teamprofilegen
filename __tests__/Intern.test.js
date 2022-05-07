@@ -1,1 +1,1 @@
-const intern = {}
+module.exports = Intern; 
