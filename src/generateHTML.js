@@ -135,13 +135,13 @@ const generateTeamPage = function (employeeCards) {
               </div>
           </div>
       </main>
-      <div id="footer-content" class="flex">
+      <div id="footer-content" class="footercontent flex">
       <div id="footer-text" class="flex flex-direction-column display:flex justify-content-center align-items-center">
           <div>
           Dimosthenis Pagkas © 2022 <span class="vertical-separator">|</span>
           </div>
       </div>
-      <div id="footer-logo" class="center-vertical"><a href="https://github.com/djpdim" target="_blank">  <img src="assets/images/github.png"> </a> </div>
+      <div id="footer-logo" class="center-vertical"><a href="https://github.com/djpdim" target="_blank"> GitHub</a> </div>
   </div>  
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

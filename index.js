@@ -4,7 +4,12 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern'); 
 const fs = require('fs'); 
 const inquirer = require('inquirer');
+const { Server } = require('http');
 const teamArray = []; 
+
+const express = require('express')
+const app = express()
+app.use(express.static('public'))
 
 const addManager = () => {
     return inquirer.prompt ([
@@ -189,11 +194,9 @@ const addEmployee = () => {
 
 const writeFile = data => {
     fs.writeFile('./dist/index.html', data, err => {
-        
         if (err) {
             console.log(err);
             return;
-         
         } else {
             console.log("Your team profile has been successfully created! Please check out the index.html")
         }
