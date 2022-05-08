@@ -1,9 +1,6 @@
-
-
-
 // create Manager card
 const generateManager = function (manager) {
-    return/*html*/`
+    return /*html*/ `
     <div class="mt-4">
         <div class="card h-100">
             <div class="card-header">
@@ -19,12 +16,12 @@ const generateManager = function (manager) {
 
         </div>
     </div>
-    `;
+    `
 }
 
 // create Engineer card
 const generateEngineer = function (engineer) {
-    return/*html*/`
+    return /*html*/ `
     <div class="mt-4">
         <div class="card h-100">
             <div class="card-header">
@@ -35,7 +32,7 @@ const generateEngineer = function (engineer) {
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
                 <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
+                <p class="github">GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
             </div>
 
         </div>
@@ -43,9 +40,9 @@ const generateEngineer = function (engineer) {
     `
 }
 
-// create Intern card 
+// create Intern card
 const generateIntern = function (intern) {
-    return/*html*/`
+    return /*html*/ `
     <div class="mt-4">
         <div class="card h-100">
             <div class="card-header">
@@ -61,54 +58,50 @@ const generateIntern = function (intern) {
     </div>
 </div>
     `
-};
+}
 
-// push array to page 
-generateHTML = (data) => {
-
-    // array for cards 
-    pageArray = []; 
+// push array to page
+generateHTML = data => {
+    // array for cards
+    pageArray = []
 
     for (let i = 0; i < data.length; i++) {
-        const employee = data[i];
-        const role = employee.getRole(); 
-
+        const employee = data[i]
+        const role = employee.getRole()
 
         // call manager function
-        if (role === 'Manager') {
-            const managerCard = generateManager(employee);
+        if (role === "Manager") {
+            const managerCard = generateManager(employee)
 
-            pageArray.push(managerCard);
+            pageArray.push(managerCard)
         }
 
         // call engineer function
-        if (role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
+        if (role === "Engineer") {
+            const engineerCard = generateEngineer(employee)
 
-            pageArray.push(engineerCard);
+            pageArray.push(engineerCard)
         }
 
-        // call intern function 
-        if (role === 'Intern') {
-            const internCard = generateIntern(employee);
+        // call intern function
+        if (role === "Intern") {
+            const internCard = generateIntern(employee)
 
-            pageArray.push(internCard);
+            pageArray.push(internCard)
         }
-        
     }
 
-    // joining strings 
-    const employeeCards = pageArray.join('')
+    // joining strings
+    const employeeCards = pageArray.join("")
 
     // return to generated page
-    const generateTeam = generateTeamPage(employeeCards); 
-    return generateTeam;
-
+    const generateTeam = generateTeamPage(employeeCards)
+    return generateTeam
 }
 
-// generate html page 
-const generateTeamPage = function (employeeCards) {   
-  return/*html*/`
+// generate html page
+const generateTeamPage = function (employeeCards) {
+    return /*html*/ `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -142,7 +135,7 @@ const generateTeamPage = function (employeeCards) {
           </div>
       </div>
       <div id="footer-logo" class="center-vertical"><a href="https://github.com/djpdim" target="_blank"> GitHub</a> </div>
-  </div>  
+  </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -150,8 +143,8 @@ const generateTeamPage = function (employeeCards) {
   </html>
 
 
-`;
+`
 }
 
 // export to index
-module.exports = generateHTML; 
+module.exports = generateHTML
