@@ -1,7 +1,10 @@
+
+
+
 // create Manager card
 const generateManager = function (manager) {
-    return `
-    <div class="col-4 mt-4">
+    return/*html*/`
+    <div class="mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${manager.name}</h3>
@@ -11,7 +14,7 @@ const generateManager = function (manager) {
             <div class="card-body">
                 <p class="id">ID: ${manager.id}</p>
                 <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
+                <p class="office">Office Number: <a href="tel:${manager.officeNumber}">${manager.officeNumber}</a></p>
             </div>
 
         </div>
@@ -21,8 +24,8 @@ const generateManager = function (manager) {
 
 // create Engineer card
 const generateEngineer = function (engineer) {
-    return `
-    <div class="col-4 mt-4">
+    return/*html*/`
+    <div class="mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${engineer.name}</h3>
@@ -32,7 +35,7 @@ const generateEngineer = function (engineer) {
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
                 <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                <p class="github">Github: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></p>
             </div>
 
         </div>
@@ -42,8 +45,8 @@ const generateEngineer = function (engineer) {
 
 // create Intern card 
 const generateIntern = function (intern) {
-    return `
-    <div class="col-4 mt-4">
+    return/*html*/`
+    <div class="mt-4">
         <div class="card h-100">
             <div class="card-header">
                 <h3>${intern.name}</h3>
@@ -105,7 +108,7 @@ generateHTML = (data) => {
 
 // generate html page 
 const generateTeamPage = function (employeeCards) {   
-  return`
+  return/*html*/`
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -126,13 +129,20 @@ const generateTeamPage = function (employeeCards) {
       </header>
       <main>
           <div class="container">
-              <div class="row justify-content-center" id="team-cards">
+              <div class="row justify-content-center" style="align-content:space-between; display:contents;"  id="team-cards">
                   <!--Team Cards-->
                   ${employeeCards}
               </div>
           </div>
       </main>
-      
+      <div id="footer-content" class="flex">
+      <div id="footer-text" class="flex flex-direction-column display:flex justify-content-center align-items-center">
+          <div>
+          Dimosthenis Pagkas © 2022 <span class="vertical-separator">|</span>
+          </div>
+      </div>
+      <div id="footer-logo" class="center-vertical"><a href="https://github.com/djpdim" target="_blank">  <img src="assets/images/github.png"> </a> </div>
+  </div>  
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
